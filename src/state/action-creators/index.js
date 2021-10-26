@@ -15,3 +15,12 @@ export const withdrawMoney = (amount)=>{
         })
     }
 }
+
+export const translate = (language)=>{
+    return (dispatch)=>{
+        dispatch({ 
+            type:"translate",
+            payload:language
+        })
+    }
+}
