@@ -4,6 +4,7 @@ import {bindActionCreators} from "redux";
 import {actionCreator} from "../state/index"
 import {useState} from "react";
 import logo from '../logo.svg';
+
 function Home() {
 
     const account = useSelector((state)=>state.account);
