@@ -1,0 +1,25 @@
+{
+    "appbar":{
+        "title":    "React Project",
+        "Login":    "Login",
+        "english":  "English",
+        "japan":    "Japanese",
+        "china":    "Simple Chinese",
+        "taiwan":   "Traditional Chinese",
+        "Logout":   "Logout"
+    },
+    "login":{
+        "title":"Welcome to Login",
+        "account":"Input your account",
+        "password":"Input your password",
+        "register":"register",
+        "forget":"forgot account or password",
+        "login":"login",
+        "remember":"Remember me"
+    },
+    "register":{
+        "check":"confirm password",
+        "email":"email",
+        "username":"username"
+    } 
+}

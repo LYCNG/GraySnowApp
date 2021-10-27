@@ -1,0 +1,20 @@
+{
+    "appbar":{
+        "title":    "React Project",
+        "Login":    "登入",
+        "english":  "英文",
+        "japan":    "日文",
+        "china":    "簡體中文",
+        "taiwan":   "繁體中文",
+        "Logout":   "登出"
+    } ,
+    "login":{
+        "title":"歡迎登入",
+        "account":"請輸入帳號",
+        "password":"請輸入密碼",
+        "register":"註冊",
+        "forget":"忘記帳號或密碼",
+        "login":"登入",
+        "remember":"記住我"
+    }      
+}

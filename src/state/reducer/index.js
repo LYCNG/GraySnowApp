@@ -4,7 +4,7 @@ import translateReducer from './translateReducer'
 
 const reducers= combineReducers({
     account:accountReducer,
-    translate:translateReducer,
+    language:translateReducer,
 });
 
 export default reducers;

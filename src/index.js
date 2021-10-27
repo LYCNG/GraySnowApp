@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux"//let full app can use store
 import {store} from "./state/store" // our store
+import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>
