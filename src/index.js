@@ -4,13 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux"//let full app can use store
-import {store} from "./state/store" // our store
+import store from "./state/store" // our store
+import {persistor} from './state/store'
+import {PersistGate} from 'redux-persist/lib/integration/react';
 import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

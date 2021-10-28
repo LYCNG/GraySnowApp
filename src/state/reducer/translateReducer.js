@@ -3,15 +3,15 @@ const reducer =(state="English",action)=>{
         case "translate":
             switch(action.payload){
                 case "en":
-                    return state = "English";
+                    return state = "en";
                 case "zh-TW":
-                    return state = "繁體中文"
+                    return state = "zh-TW"
                 case "zh-CN":
-                    return state = "简体中文"
+                    return state = "zh-CN"
                 case "jp":
-                    return state = "日本語"
+                    return state = "jp"
                 default:
-                    return "English"
+                    return "en"
             }
         default:
             return state;

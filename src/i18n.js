@@ -29,7 +29,7 @@ i18n
 .use(initReactI18next)
 .init({
     resources,
-    lng: 'en',             //預設語言
+    lng: localStorage.getItem("i18nextLng"),             //預設語言
     fallbackLng: 'en',     //如果當前切換的語言沒有對應的翻譯則使用這個語言，
     interpolation: {
       escapeValue: false,

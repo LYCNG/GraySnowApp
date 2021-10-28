@@ -6,7 +6,10 @@
         "japan":    "日文",
         "china":    "简体中文",
         "taiwan":   "繁体中文",
-        "Logout":   "登出"
+        "Logout":   "登出",
+        "current":   "简体中文",
+        "Dark":     "明亮模式",
+        "Light":    "夜色模式"
     },
     "login":{
         "title": "欢迎登录",
@@ -15,6 +18,15 @@
         "register":"注册",
         "forget":"忘记帐号或密码",
         "login":"登入",
-        "remember":"记住我"
-    }    
+        "remember":"记住我",
+        "incorrect":"登录失败，请检查您的账号或密码是否正确。"
+    }, 
+    "register":{
+        "title":"欢迎注册",
+        "check":"确认密码",
+        "email":"email",
+        "username":"用户名",
+        "back":"回到登入",
+        "sign_up":"注册"
+    }  
 }

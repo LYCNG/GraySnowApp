@@ -24,3 +24,30 @@ export const translate = (language)=>{
         })
     }
 }
+
+export const switchMode = (theme)=>{
+    return (dispatch)=>{
+        dispatch({ 
+            type:"switch",
+            payload:theme
+        })
+    }
+}
+
+//auth is Object {auth:Boolean,user:String}
+export const authorize=(auth)=>{
+    return (dispatch)=>{
+        dispatch({
+            type:"set_auth",
+            payload:auth
+        })
+    }
+}
+export const unAuthorize=(auth)=>{
+    return (dispatch)=>{
+        dispatch({
+            type:"remove_auth",
+            payload:auth
+        })
+    }
+}

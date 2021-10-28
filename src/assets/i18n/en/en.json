@@ -6,7 +6,10 @@
         "japan":    "Japanese",
         "china":    "Simple Chinese",
         "taiwan":   "Traditional Chinese",
-        "Logout":   "Logout"
+        "Logout":   "Logout",
+        "current":  "English",
+        "Dark":     "Dark Mode",
+        "Light": "Light Mode"
     },
     "login":{
         "title":"Welcome to Login",
@@ -15,11 +18,15 @@
         "register":"register",
         "forget":"forgot account or password",
         "login":"login",
-        "remember":"Remember me"
+        "remember":"Remember me",
+        "incorrect":"Login failed,please check your account or password is correct."
     },
     "register":{
+        "title":"Welcome to Register",
         "check":"confirm password",
         "email":"email",
-        "username":"username"
+        "username":"username",
+        "back":"back to login",
+        "sign_up":"Sign up"
     } 
 }
