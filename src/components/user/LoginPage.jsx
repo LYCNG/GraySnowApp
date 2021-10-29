@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
@@ -12,6 +12,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography"
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import Alert from '@mui/material/Alert';
+import Collapse from '@mui/material/Collapse';
 import { useTranslation} from 'react-i18next';
 import {bindActionCreators} from "redux";
 import {actionCreator} from "../../state/index"
@@ -22,22 +24,32 @@ function LoginPage() {
 
     const [register,setRegister] = useState(false);
     const [inputData,setInputData] = useState({account:"",password:""});
+    const [popError, setPopError] = useState(false);
+
     const dispatch = useDispatch();
     const {authorize} = bindActionCreators(actionCreator,dispatch);
+    let auth = useSelector(state =>state.auth);
     const handleRegister=()=>{
+        setPopError(false);
         setRegister(prev=>!prev)
     };
-
     const handleLogin=()=>{
         let ac=inputData.account,pd = inputData.password;
         //user axios to post login state
         if(ac==="admin"&&pd==="test123"){
+            window.location.href ='/'
             alert("login!")
             authorize({auth:true,username:"fsAdmin"})
         }else{
-            alert(t("login.incorrect"))
+            setPopError(true)
         }
     };
+    useEffect(()=>{
+       if(auth.auth){
+           alert("您已登入")
+           window.location.href = '/';
+       }
+    },[]);
 
     const renderRegister=(
         <>
@@ -73,6 +85,12 @@ function LoginPage() {
         </>
     )
 
+    const popAlert=(
+        <Alert severity="error">
+           <strong>{t("login.incorrect")}</strong>
+        </Alert>
+    )
+
     return (
         <Box sx={{ 
             width: '50%',
@@ -83,6 +101,9 @@ function LoginPage() {
             <Typography variant="h3" component="div" gutterBottom sx={{fontWeight:"bold",color:"blue"}}>
                 {!register?t("login.title"):t("register.title")}
             </Typography>
+            <Collapse in={popError}>
+                {popAlert}
+            </Collapse>
             <FormControl variant="standard">
                 <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                     <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
@@ -100,6 +121,7 @@ function LoginPage() {
                 </Box>
                 {register?renderRegister:null}
             </FormControl>
+            
             {!register?<FormControlLabel control={<Checkbox defaultChecked />} label={t("login.remember")} sx={{marginTop:"1.5em"}}/>:null}
             <Box sx={{ marginTop:'2em'}}>
                 {!register?loginButton:registerButton}

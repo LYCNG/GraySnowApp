@@ -28,5 +28,11 @@
         "username":"ユーザー名",
         "back":"ログインに戻る",
         "sign_up":"サインアップ"
-    } 
+    },
+    "sideMenu":{
+        "home":"メイン",
+        "new":"ニュース",
+        "feature":"フィーチャ",
+        "project":"企画"
+    }
 }

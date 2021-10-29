@@ -28,5 +28,11 @@
         "username":"用户名",
         "back":"回到登入",
         "sign_up":"注册"
+    },
+    "sideMenu":{
+        "home":"主画面",
+        "new":"新消息",
+        "feature":"特色",
+        "project":"计划"
     }  
 }

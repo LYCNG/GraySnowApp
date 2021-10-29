@@ -28,5 +28,11 @@
         "username":"username",
         "back":"back to login",
         "sign_up":"Sign up"
-    } 
+    },
+    "sideMenu":{
+        "home":"Home",
+        "new":"News",
+        "feature":"Feature",
+        "project":"Project"
+    }
 }

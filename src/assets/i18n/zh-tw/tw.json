@@ -28,5 +28,11 @@
         "username":"使用者名稱",
         "back":"返回登入",
         "sign_up":"註冊"
-    }      
+    } ,
+    "sideMenu":{
+        "home":"主畫面",
+        "new":"新消息",
+        "feature":"特色",
+        "project":"計畫"
+    }     
 }
