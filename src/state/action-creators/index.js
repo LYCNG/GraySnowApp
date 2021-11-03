@@ -34,20 +34,4 @@ export const switchMode = (theme)=>{
     }
 }
 
-//auth is Object {auth:Boolean,user:String}
-export const authorize=(auth)=>{
-    return (dispatch)=>{
-        dispatch({
-            type:"set_auth",
-            payload:auth
-        })
-    }
-}
-export const unAuthorize=(auth)=>{
-    return (dispatch)=>{
-        dispatch({
-            type:"remove_auth",
-            payload:auth
-        })
-    }
-}
+export * from "./authActionCreators"

@@ -15,37 +15,39 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
 import { useTranslation} from 'react-i18next';
-import {bindActionCreators} from "redux";
-import {actionCreator} from "../../state/index"
-import {useSelector,useDispatch} from "react-redux"
+import {useSelector} from "react-redux"
+import { useActions } from "../../hooks/useActions";
 
 function LoginPage() {
+
     const {t} = useTranslation();
+    const {  login, cleanError } = useActions();
 
     const [register,setRegister] = useState(false);
-    const [inputData,setInputData] = useState({account:"",password:""});
+    const [inputData,setInputData] = useState({username:"",password:""});
     const [popError, setPopError] = useState(false);
 
-    const dispatch = useDispatch();
-    const {authorize} = bindActionCreators(actionCreator,dispatch);
-    let auth = useSelector(state =>state.auth);
+    // const {authorize} = bindActionCreators(actionCreator,dispatch);
+    const { auth, error } = useSelector(state =>state.auth);
+
     const handleRegister=()=>{
         setPopError(false);
         setRegister(prev=>!prev)
     };
+    console.log(auth)
     const handleLogin=()=>{
-        let ac=inputData.account,pd = inputData.password;
-        //user axios to post login state
-        if(ac==="admin"&&pd==="test123"){
-            window.location.href ='/'
-            alert("login!")
-            authorize({auth:true,username:"fsAdmin"})
-        }else{
-            setPopError(true)
-        }
+        let {username, password}=inputData;
+        login(username,password)
     };
+    useEffect(() =>{
+        if (error) {
+            setPopError(Boolean(error));
+            cleanError()
+        }
+    },[error,cleanError])
+
     useEffect(()=>{
-       if(auth.auth){
+       if(auth){
            alert("您已登入")
            window.location.href = '/';
        }
@@ -109,7 +111,7 @@ function LoginPage() {
                     <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                     <TextField 
                         id="input-with-sx" label={t("login.account")} 
-                        variant="standard" onChange={(e)=>setInputData({...inputData,account:e.target.value})}
+                        variant="standard" onChange={(e)=>setInputData({...inputData,username:e.target.value})}
                     />
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'flex-end',marginTop:"1.5em" }}>

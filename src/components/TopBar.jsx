@@ -14,16 +14,17 @@ import { useTranslation} from 'react-i18next';
 import {bindActionCreators} from "redux";
 import {actionCreator} from "../state/index"
 import {useSelector,useDispatch} from "react-redux"
+import { useActions } from "../hooks/useActions";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 function TopBar() {
 
     //redux store
     const dispatch = useDispatch();
-    const {translate,switchMode,unAuthorize} = bindActionCreators(actionCreator,dispatch);
+    const {translate,switchMode,logout} =  useActions();
+
     let theme = useSelector(state => state.theme);//String
     let auth = useSelector(state => state.auth.auth);//Boolean
- 
     //local state
     const [menuEl, setMenuEl] = useState(null);
     const [userEl,setUserEl] = useState(null);
@@ -57,10 +58,11 @@ function TopBar() {
     };
     const handleLogout = (e) => {
         e.preventDefault();
+        let a = t("appbar.logout_check")
         // eslint-disable-next-line no-restricted-globals
-        var ok = confirm("確認登出?")
+        var ok = confirm(a)
         if(ok){
-            unAuthorize(auth)
+            logout()
         }
         setUserEl(null);
     };

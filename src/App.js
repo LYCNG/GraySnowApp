@@ -8,8 +8,9 @@ import Box from '@mui/material/Box';
 import {useSelector} from "react-redux"
 
 function App() {
-  let theme = useSelector((state)=>state.theme)
 
+  const theme = useSelector((state)=>state.theme)
+ 
   const themeStyle = {
     Dark: '#282c34',
     Light:"#F3F3F3"

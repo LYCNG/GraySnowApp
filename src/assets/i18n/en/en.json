@@ -6,6 +6,7 @@
         "japan":    "Japanese",
         "china":    "Simple Chinese",
         "taiwan":   "Traditional Chinese",
+        "logout_check":"Are you sure to logout?",
         "Logout":   "Logout",
         "current":  "English",
         "Dark":     "Dark Mode",

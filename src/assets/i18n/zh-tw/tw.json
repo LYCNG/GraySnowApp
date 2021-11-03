@@ -7,6 +7,7 @@
         "china":    "簡體中文",
         "taiwan":   "繁體中文",
         "Logout":   "登出",
+        "logout_check":"您確定要登出嗎？",
         "current": "繁體中文",
         "Dark":     "夜色主題",
         "Light":    "明亮主題"
