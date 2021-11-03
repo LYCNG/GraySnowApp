@@ -3,6 +3,7 @@ const initState ={
     username:null,
     templateToken:"",
     error:"",
+    avatar:""
 }
 
 const reducer = (state=initState,action)=>{
@@ -12,6 +13,7 @@ const reducer = (state=initState,action)=>{
                 ...state,
                 auth: true,
                 username: action.username,
+                avatar:"https://upload.wikimedia.org/wikipedia/zh/e/e5/Gawr_Gura.png",
                 templateToken:action.templateToken
             }
         case "LOGOUT": //取消登入

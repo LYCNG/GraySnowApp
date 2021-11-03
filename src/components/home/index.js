@@ -1,9 +1,9 @@
 import React from 'react'
 import {useSelector,useDispatch} from "react-redux"
 import {bindActionCreators} from "redux";
-import {actionCreator} from "../state/index"
+import {actionCreator} from "../../state/index"
 import {useState} from "react";
-import logo from '../logo.svg';
+import logo from '../../logo.svg';
 
 function Home() {
 

@@ -8,23 +8,22 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Menu,MenuItem} from '@mui/material'
 import Switch from '@mui/material/Switch';
-import SideBar from "./sideBar/SideBar"
-import neko from "../assets/img/nako.png"
+import SideBar from "../sideBar/SideBar"
+import neko from "../../assets/img/nako.png"
 import { useTranslation} from 'react-i18next';
-import {bindActionCreators} from "redux";
-import {actionCreator} from "../state/index"
-import {useSelector,useDispatch} from "react-redux"
-import { useActions } from "../hooks/useActions";
+import {useSelector} from "react-redux"
+import { useActions } from "../../hooks/useActions";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import AccountCircle from '@mui/icons-material/AccountCircle';
+import Avatar from '@mui/material/Avatar';
+
 function TopBar() {
-
+    //i18n
+    const { t,i18n } = useTranslation();
     //redux store
-    const dispatch = useDispatch();
     const {translate,switchMode,logout} =  useActions();
-
     let theme = useSelector(state => state.theme);//String
-    let auth = useSelector(state => state.auth.auth);//Boolean
+    let {auth,avatar,username} = useSelector(state => state.auth);//Boolean
     //local state
     const [menuEl, setMenuEl] = useState(null);
     const [userEl,setUserEl] = useState(null);
@@ -32,10 +31,8 @@ function TopBar() {
     const menuId = 'primary-search-account-menu';
     const [showSideMenu,setShowSideMenu] = useState(false);
     const darkTheme={"Dark":"#1D1B8C",}
-    //i18n
-    const { t,i18n } = useTranslation();
+
     //function
-    //--menu control
     const handleToggle=()=>{
         setShowSideMenu(true)
     };
@@ -46,6 +43,8 @@ function TopBar() {
         }
         setMenuEl(null)
     };
+
+    //menu control
     const handleClick = (event) => {
         event.preventDefault();
         setMenuEl(event.currentTarget);
@@ -56,14 +55,12 @@ function TopBar() {
     const handleMenuClose = () => {
         setUserEl(null);
     };
+
     const handleLogout = (e) => {
         e.preventDefault();
-        let a = t("appbar.logout_check")
         // eslint-disable-next-line no-restricted-globals
-        var ok = confirm(a)
-        if(ok){
-            logout()
-        }
+        var ok = confirm(t("appbar.logout_check"))
+        if(ok) logout();
         setUserEl(null);
     };
     //--mode control
@@ -90,7 +87,7 @@ function TopBar() {
           open={Boolean(userEl)}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+          <MenuItem onClick={handleMenuClose}>{username}</MenuItem>
           <MenuItem onClick={handleMenuClose}>My account</MenuItem>
           <MenuItem onClick={handleLogout }>{t("appbar.Logout")}</MenuItem>
         </Menu>
@@ -130,7 +127,8 @@ function TopBar() {
             onClick={handleProfileMenuOpen}
             color="inherit"
         >
-            <AccountCircle />
+            {/* <AccountCircle /> */}
+            <Avatar alt="Remy Sharp" src={avatar} />
         </IconButton>
     )
 

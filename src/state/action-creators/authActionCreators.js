@@ -3,7 +3,7 @@ import axios from "axios";
 import { Dispatch } from "redux";//for ts
 
 const authDemo=(username,password)=>{
-    if(username==="admin"&&password==="test123"){
+    if(username==="gura"&&password==="test123"){
         let data={
             username: username,
             token: username+password

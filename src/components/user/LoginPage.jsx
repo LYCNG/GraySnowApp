@@ -14,6 +14,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
+
 import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
 import { useActions } from "../../hooks/useActions";
@@ -34,11 +35,12 @@ function LoginPage() {
         setPopError(false);
         setRegister(prev=>!prev)
     };
-    console.log(auth)
+
     const handleLogin=()=>{
         let {username, password}=inputData;
         login(username,password)
     };
+
     useEffect(() =>{
         if (error) {
             setPopError(Boolean(error));
@@ -48,10 +50,9 @@ function LoginPage() {
 
     useEffect(()=>{
        if(auth){
-           alert("您已登入")
            window.location.href = '/';
        }
-    },[]);
+    },[auth]);
 
     const renderRegister=(
         <>
