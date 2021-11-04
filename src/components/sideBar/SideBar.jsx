@@ -32,7 +32,7 @@ function SideBar({show,setShow}) {
 
     const menuList = [
       {text: 'home', icon:<HomeIcon />,root:"/"},
-      {text: 'new', icon:<NewReleasesIcon />,root:"#"},
+      {text: 'new', icon:<NewReleasesIcon />,root:"/canvas"},
       {text: 'feature', icon:<FeaturedPlayListIcon />,root:"#"},
       {text: 'project', icon:<AutoAwesomeMosaicIcon />,root:"#"},
     ];
