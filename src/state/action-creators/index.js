@@ -16,22 +16,7 @@ export const withdrawMoney = (amount)=>{
     }
 }
 
-export const translate = (language)=>{
-    return (dispatch)=>{
-        dispatch({ 
-            type:"translate",
-            payload:language
-        })
-    }
-}
 
-export const switchMode = (theme)=>{
-    return (dispatch)=>{
-        dispatch({ 
-            type:"switch",
-            payload:theme
-        })
-    }
-}
-
-export * from "./authActionCreators"
+export * from "./translateAction"
+export * from "./themeAction"
+export * from "./authAction"

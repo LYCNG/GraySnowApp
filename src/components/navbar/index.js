@@ -16,8 +16,13 @@ import { useActions } from "../../hooks/useActions";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Avatar from '@mui/material/Avatar';
+import PropTypes from 'prop-types';
 
-function TopBar() {
+
+function TopBar({
+    useLogin,
+    useTranslate
+}) {
     //i18n
     const { t,i18n } = useTranslation();
     //redux store
@@ -67,6 +72,7 @@ function TopBar() {
     const handleSwitch=(e)=>{
         e.preventDefault()
         let bool =  e.target.checked
+        console.log(bool)
         setChecked(bool)
         switchMode(bool?"Dark":"Light")
     }
@@ -147,16 +153,27 @@ function TopBar() {
                     
                     <MenuIcon />
                 </IconButton>
+
                 <img src={neko} width={50} alt="logo" />
+
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1,  textDecoration:"none" }} onClick={()=>window.location.href="/"}>
                     {t("appbar.title")}
                 </Typography>
+
                 <Box sx={{ flexGrow: 15 }} />
-                <FormControlLabel control={<Switch  checked={checked} color="default" onChange={handleSwitch}/>} label={t(`appbar.${theme}`)} />
-                <Button color="inherit" onClick={handleClick} disableElevation >{t("appbar.current")}</Button>
-                {auth?userAuth:(
-                    <Button color="inherit" href="/login">{t("appbar.Login")}</Button>
-                )}
+
+                <FormControlLabel 
+                    control={<Switch  checked={checked} color="default" onChange={handleSwitch}/>} 
+                    label={t(`appbar.${theme}`)} 
+                />
+
+                {useTranslate?(<Button color="inherit" onClick={handleClick} disableElevation >{t("appbar.current")}</Button>):null}
+
+                {useLogin ? (
+                    auth ? userAuth:(
+                        <Button color="inherit" href="/login">{t("appbar.Login")}</Button>
+                        )
+                    ):null}
 
             </Toolbar>
             {<SideBar show={showSideMenu} setShow={setShowSideMenu}/>}
@@ -167,4 +184,17 @@ function TopBar() {
     );
 }
 
+
+TopBar.propTypes = {
+    useLogin: PropTypes.bool,
+    useTranslate: PropTypes.bool,
+};
+
+TopBar.defaultProps = {
+    useLogin: true,
+    useTranslate: true,
+};
+
 export default TopBar;
+
+

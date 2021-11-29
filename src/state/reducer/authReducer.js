@@ -1,14 +1,16 @@
-const initState ={
+import { ActionTypes } from "../action-types";
+
+const  INIT_STATE ={
     auth:false,
     username:null,
-    templateToken:"",
-    error:"",
+    token:"",
+    error_message:"",
     avatar:""
 }
 
-const reducer = (state=initState,action)=>{
+const reducer = (state = INIT_STATE,action)=>{
     switch(action.type){
-        case "LOGIN_SUCCESS": //登入確認
+        case ActionTypes.SET_USER_LOGIN_SUCCESS: //登入確認
             return {
                 ...state,
                 auth: true,
@@ -16,15 +18,18 @@ const reducer = (state=initState,action)=>{
                 avatar:"https://upload.wikimedia.org/wikipedia/zh/e/e5/Gawr_Gura.png",
                 templateToken:action.templateToken
             }
-        case "LOGOUT": //取消登入
-            return {...initState};
-        case "LOGIN_ERROR":
+        case ActionTypes.SET_USER_LOGOUT: //取消登入
+            return {
+                ...INIT_STATE,
+                auth:false,
+            };
+            
+        case ActionTypes.SET_USER_LOGIN_ERROR_MESSAGE:
             return {
                 ...state,
-                error:action.error
+                error_message:action.error_message
             }
-        case "CLEAN_ERROR":
-            
+        case ActionTypes.CLEAN_LOGIN_ERROR_MESSAGE:
             return {
                 ...state,
                 error:""

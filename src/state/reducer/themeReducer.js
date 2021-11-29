@@ -1,16 +1,11 @@
+import { ActionTypes } from "../action-types";
+
 const reducer =(state="Light",action)=>{
     switch(action.type){
-        case "switch": //存錢
-            switch(action.payload){
-                case "Light":
-                    return state = "Light";
-                case "Dark":
-                    return state = "Dark";
-                default:
-                    return state;
-            };
+        case ActionTypes.SET_THEME_SWITCH:
+            return state = action.theme
         default:
-            return state;
+            return state
     };
 };
 

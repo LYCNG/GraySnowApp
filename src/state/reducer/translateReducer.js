@@ -1,18 +1,9 @@
-const reducer =(state="English",action)=>{
+import { ActionTypes } from "../action-types";
+
+const reducer =(state="en",action)=>{
     switch(action.type){
-        case "translate":
-            switch(action.payload){
-                case "en":
-                    return state = "en";
-                case "zh-TW":
-                    return state = "zh-TW"
-                case "zh-CN":
-                    return state = "zh-CN"
-                case "jp":
-                    return state = "jp"
-                default:
-                    return "en"
-            }
+        case ActionTypes.SET_TOPIC_LANGUAGE:
+            return state = action.language
         default:
             return state;
     }
