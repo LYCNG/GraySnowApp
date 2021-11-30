@@ -156,7 +156,7 @@ function TopBar({
 
                 <img src={neko} width={50} alt="logo" />
 
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1,  textDecoration:"none" }} onClick={()=>window.location.href=url+"/"}>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1,  textDecoration:"none" }} onClick={()=>window.location.href="/"}>
                     {t("appbar.title")}
                 </Typography>
 
@@ -171,7 +171,7 @@ function TopBar({
 
                 {useLogin ? (
                     auth ? userAuth:(
-                        <Button color="inherit" href={url+"/login"}>{t("appbar.Login")}</Button>
+                        <Button color="inherit" href={`/login`}>{t("appbar.Login")}</Button>
                         )
                     ):null}
 

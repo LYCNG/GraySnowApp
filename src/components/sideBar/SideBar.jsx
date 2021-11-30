@@ -17,7 +17,7 @@ import {useSelector} from 'react-redux';
 const {REACT_APP_GITHUB_PAGE_URL} = process.env;
 const url = REACT_APP_GITHUB_PAGE_URL
 function SideBar({show,setShow}) {
-
+ 
     let theme = useSelector((state)=>state.theme);
 
     let darkTheme = {"Dark":"#4B4B4B"};
@@ -32,10 +32,10 @@ function SideBar({show,setShow}) {
       };
 
     const menuList = [
-      {text: 'home', icon:<HomeIcon />,root:url+"/"},
-      {text: 'new', icon:<NewReleasesIcon />,root:url+"#"},
-      {text: 'feature', icon:<FeaturedPlayListIcon />,root:url+"#"},
-      {text: 'project', icon:<AutoAwesomeMosaicIcon />,root:url+"#"},
+      {text: 'home', icon:<HomeIcon />,root:"/"},
+      {text: 'new', icon:<NewReleasesIcon />,root:"#"},
+      {text: 'feature', icon:<FeaturedPlayListIcon />,root:"#"},
+      {text: 'project', icon:<AutoAwesomeMosaicIcon />,root:"#"},
     ];
 
     const list = (anchor) => (
