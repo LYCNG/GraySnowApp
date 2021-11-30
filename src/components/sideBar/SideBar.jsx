@@ -14,7 +14,8 @@ import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import { useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
-
+const {REACT_APP_GITHUB_PAGE_URL} = process.env;
+const url = REACT_APP_GITHUB_PAGE_URL
 function SideBar({show,setShow}) {
 
     let theme = useSelector((state)=>state.theme);
@@ -31,10 +32,10 @@ function SideBar({show,setShow}) {
       };
 
     const menuList = [
-      {text: 'home', icon:<HomeIcon />,root:"/"},
-      {text: 'new', icon:<NewReleasesIcon />,root:"#"},
-      {text: 'feature', icon:<FeaturedPlayListIcon />,root:"#"},
-      {text: 'project', icon:<AutoAwesomeMosaicIcon />,root:"#"},
+      {text: 'home', icon:<HomeIcon />,root:url+"/"},
+      {text: 'new', icon:<NewReleasesIcon />,root:url+"#"},
+      {text: 'feature', icon:<FeaturedPlayListIcon />,root:url+"#"},
+      {text: 'project', icon:<AutoAwesomeMosaicIcon />,root:url+"#"},
     ];
 
     const list = (anchor) => (
@@ -56,7 +57,7 @@ function SideBar({show,setShow}) {
                 <ListItemIcon sx={{ color: 'inherit' }} >
                   {item.icon}
                 </ListItemIcon>
-                <ListItemText primary={t(`sideMenu.${item.text}`)} href='/' />
+                <ListItemText primary={t(`sideMenu.${item.text}`)} />
               </ListItem>
             ))}
           </List>
