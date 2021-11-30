@@ -9,6 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import HomeIcon from '@mui/icons-material/Home';
+import ListItemButton from '@mui/material/ListItemButton';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
 import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
@@ -17,7 +18,7 @@ import {useSelector} from 'react-redux';
 const {REACT_APP_PUBLIC_URL} = process.env;
 const url = REACT_APP_PUBLIC_URL
 function SideBar({show,setShow}) {
- 
+    console.log("show",show)
     let theme = useSelector((state)=>state.theme);
 
     let darkTheme = {"Dark":"#4B4B4B"};
@@ -32,7 +33,7 @@ function SideBar({show,setShow}) {
       };
 
     const menuList = [
-      {text: 'home', icon:<HomeIcon />,root:url},
+      {text: 'home', icon:<HomeIcon />,root:"/"},
       {text: 'new', icon:<NewReleasesIcon />,root:"#"},
       {text: 'feature', icon:<FeaturedPlayListIcon />,root:"#"},
       {text: 'project', icon:<AutoAwesomeMosaicIcon />,root:"#"},
@@ -48,17 +49,17 @@ function SideBar({show,setShow}) {
             width:250
           }}
           role="presentation"
-          onClick={toggleDrawer(anchor, false)}
-          onKeyDown={toggleDrawer(anchor, false)}
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
         >
           <List >
             {menuList.map((item, index) => (
-              <ListItem button key={index} onClick={()=>window.location.href=item.root}>
+              <ListItemButton button="true" key={index} onClick={()=>window.location.href=item.root}>
                 <ListItemIcon sx={{ color: 'inherit' }} >
                   {item.icon}
                 </ListItemIcon>
-                <ListItemText primary={t(`sideMenu.${item.text}`)} />
-              </ListItem>
+                <ListItemText primary={t(`sideMenu.${item.text}`)}/>
+              </ListItemButton>
             ))}
           </List>
           <Divider />
