@@ -14,8 +14,8 @@ import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import { useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
-const {REACT_APP_GITHUB_PAGE_URL} = process.env;
-const url = REACT_APP_GITHUB_PAGE_URL
+const {REACT_APP_PUBLIC_URL} = process.env;
+const url = REACT_APP_PUBLIC_URL
 function SideBar({show,setShow}) {
  
     let theme = useSelector((state)=>state.theme);
