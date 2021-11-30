@@ -9,8 +9,8 @@ const BaseRouter = () => (
     
     <div>
         <Switch>
-            <Route exact path ={"/"} component={ Home } />
-            <Route exact path={"/login"} component={ LoginPage } />
+            <Route exact path ={url+"/"} component={ Home } />
+            <Route exact path={url+"/login"} component={ LoginPage } />
         </Switch>
     </div>
 );
