@@ -6,10 +6,7 @@ import { BrowserRouter as Router} from 'react-router-dom'
 import Box from '@mui/material/Box';
 // import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
-
-
 function App() {
- 
  
   const theme = useSelector((state)=>state.theme)
  
@@ -21,7 +18,7 @@ function App() {
   return (
     <div className="App" style={{backgroundColor:themeStyle[theme]}}>
       <TopBar /> 
-      <Router >
+      <Router>
         <Box sx={{width:'100%',minHeight: '100vh'}}>
           <BaseRouter />
         </Box>
