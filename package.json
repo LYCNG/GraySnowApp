@@ -2,7 +2,7 @@
   "name": "react-temp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://LYCNG.github.io/react-temp",
+  "homepage": "https://LYCNG.github.io/react-temp/",
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
