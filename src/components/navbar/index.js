@@ -172,7 +172,7 @@ function TopBar({
 
                 {useLogin ? (
                     auth ? userAuth:(
-                        <Button color="inherit" href={`https://LYCNG.github.io/react-temp/login`}>{t("appbar.Login")}</Button>
+                        <Button color="inherit" link="/login">{t("appbar.Login")}</Button>
                         )
                     ):null}
 
