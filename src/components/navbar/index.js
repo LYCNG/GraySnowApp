@@ -30,6 +30,7 @@ function TopBar({
     const {translate,switchMode,logout} =  useActions();
     let theme = useSelector(state => state.theme);//String
     let {auth,avatar,username} = useSelector(state => state.auth);//Boolean
+
     //local state
     const [menuEl, setMenuEl] = useState(null);
     const [userEl,setUserEl] = useState(null);
@@ -171,7 +172,7 @@ function TopBar({
 
                 {useLogin ? (
                     auth ? userAuth:(
-                        <Button color="inherit" href={`/login`}>{t("appbar.Login")}</Button>
+                        <Button color="inherit" href={`https://LYCNG.github.io/react-temp/login`}>{t("appbar.Login")}</Button>
                         )
                     ):null}
 
