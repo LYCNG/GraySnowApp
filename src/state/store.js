@@ -4,6 +4,7 @@ import thunk from 'redux-thunk'//thunk 讓function去包裝另一個function的�
 import {persistStore, persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import logger from "redux-logger";
 
 const persistConfig = {
     key: 'root',//can change
@@ -16,7 +17,7 @@ const store = createStore(
     // reducers,
     // {},
     myPersistReducer,
-    applyMiddleware(thunk)
+    applyMiddleware(thunk,logger)
 );
 
 export const persistor = persistStore(store);

@@ -6,9 +6,11 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import Box from '@mui/material/Box';
 // import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
+const {REACT_APP_API_ENDPOINT} = process.env;
 
 function App() {
-
+ 
+  console.log(REACT_APP_API_ENDPOINT)
   const theme = useSelector((state)=>state.theme)
  
   const themeStyle = {

@@ -72,7 +72,6 @@ function TopBar({
     const handleSwitch=(e)=>{
         e.preventDefault()
         let bool =  e.target.checked
-        console.log(bool)
         setChecked(bool)
         switchMode(bool?"Dark":"Light")
     }
