@@ -9,6 +9,8 @@ export const ActionTypes = {
     SET_USER_LOGOUT: 'SET_USER_LOGOUT',
     //theme switch
     SET_THEME_SWITCH: 'SET_THEME_SWITCH',
+    SET_THEME_DARK:"SET_THEME_DARK",
+    SET_THEME_LIGHT:"SET_THEME_LIGHT",
     //translation
     SET_TOPIC_LANGUAGE: 'SET_TOPIC_LANGUAGE',
 }

@@ -7,13 +7,11 @@ const {REACT_APP_PUBLIC_URL} = process.env;
 const url = REACT_APP_PUBLIC_URL
 
 const BaseRouter = () => (
+    <Switch>
+        <Route exact path ={'/'} component={ Home } />
+        <Route exact path={"react-temp/login"} component={ LoginPage } />
+    </Switch>
 
-    <div>
-        <Switch>
-            <Route exact path ={'/'} component={ Home } />
-            <Route exact path={"/login"} component={ LoginPage } />
-        </Switch>
-    </div>
 );
 
 export default BaseRouter;
