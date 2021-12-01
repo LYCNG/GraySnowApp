@@ -18,7 +18,7 @@ import {useSelector} from 'react-redux';
 const {REACT_APP_PUBLIC_URL} = process.env;
 const url = REACT_APP_PUBLIC_URL
 function SideBar({show,setShow}) {
-    console.log("show",show)
+
     let theme = useSelector((state)=>state.theme);
 
     let darkTheme = {"Dark":"#4B4B4B"};

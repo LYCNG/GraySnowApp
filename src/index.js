@@ -7,13 +7,17 @@ import {Provider} from "react-redux"//let full app can use store
 import store from "./state/store" // our store
 import {persistor} from './state/store'
 import {PersistGate} from 'redux-persist/lib/integration/react';
+import {HashRouter} from "react-router-dom";
 import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+ 
       <PersistGate loading={null} persistor={persistor}>
+      {/* <HashRouter > */}
         <App />
+        {/* </HashRouter> */}
       </PersistGate>
     </Provider>
   </React.StrictMode>,
