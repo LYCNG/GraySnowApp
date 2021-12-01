@@ -6,13 +6,10 @@ import { BrowserRouter as Router,HashRouter} from 'react-router-dom'
 import Box from '@mui/material/Box';
 // import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
-const {REACT_APP_PUBLIC_URL} = process.env
 
 function App() {
  
-  const theme = useSelector((state)=>state.theme)
-  const usePublic = true;
-  
+  const theme = useSelector((state)=>state.theme);
   const themeStyle = {
     Dark: '#282c34',
     Light:"#F3F3F3"

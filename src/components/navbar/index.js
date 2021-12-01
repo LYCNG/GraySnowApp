@@ -18,9 +18,11 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import Avatar from '@mui/material/Avatar';
 import PropTypes from 'prop-types';
 
-const {REACT_APP_GITHUB_PAGE_URL} = process.env;
-const url = REACT_APP_GITHUB_PAGE_URL
-
+//GA TRACK EVENT
+import ReactGA from 'react-ga';
+const {REACT_APP_GA_TRACKING_CODE} = process.env
+ReactGA.initialize(REACT_APP_GA_TRACKING_CODE);
+// ReactGA.pageview(window.location.pathname + window.location.search);
 function TopBar({
     useLogin,
     useTranslate
@@ -41,6 +43,7 @@ function TopBar({
     const darkTheme={"Dark":"#1D1B8C",}
 
     //function
+
     const handleToggle=()=>{
         setShowSideMenu(true)
     };
@@ -56,6 +59,11 @@ function TopBar({
     const handleClick = (event) => {
         event.preventDefault();
         setMenuEl(event.currentTarget);
+        ReactGA.event({
+            category: "menu",
+            action: "translate",
+            label: "translate",
+          })
     };
     const handleProfileMenuOpen = (event) => {
         setUserEl(event.currentTarget);
