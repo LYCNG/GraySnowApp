@@ -166,7 +166,11 @@ function TopBar({
 
                 <img src={neko} width={50} alt="logo" />
 
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1,  textDecoration:"none" }} onClick={()=>window.location.href="/"}>
+                <Typography 
+                    variant="h6" component="div" 
+                    sx={{ flexGrow: 1,  textDecoration:"none",display: { xs: 'none', sm: 'block' } }} 
+                    onClick={()=>window.location.href="/"}
+                >
                     {t("appbar.title")}
                 </Typography>
 
