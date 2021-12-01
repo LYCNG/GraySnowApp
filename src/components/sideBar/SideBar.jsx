@@ -54,7 +54,7 @@ function SideBar({show,setShow}) {
         >
           <List >
             {menuList.map((item, index) => (
-              <ListItemButton button="true" key={index} onClick={()=>window.location.href=item.root}>
+              <ListItemButton button="true" key={index} onClick={()=>window.location.href="#"+item.root}>
                 <ListItemIcon sx={{ color: 'inherit' }} >
                   {item.icon}
                 </ListItemIcon>

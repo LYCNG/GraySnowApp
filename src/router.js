@@ -9,7 +9,7 @@ const url = REACT_APP_PUBLIC_URL
 const BaseRouter = () => (
     <Switch>
         <Route exact path ={'/'} component={ Home } />
-        <Route exact path={"react-temp/login"} component={ LoginPage } />
+        <Route exact path={"/login"} component={ LoginPage } />
     </Switch>
 
 );

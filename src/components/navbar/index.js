@@ -173,7 +173,7 @@ function TopBar({
 
                 {useLogin ? (
                     auth ? userAuth:(
-                            <Button color="inherit" href="/login">{t("appbar.Login")}</Button>
+                            <Button color="inherit" href="#/login">{t("appbar.Login")}</Button>
                         )
                     ):null}
 
