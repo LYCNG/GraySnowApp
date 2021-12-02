@@ -223,7 +223,6 @@ function TopBar({
                 </Box>
                 <Typography 
                     variant="h6" component="div" 
-                    nowrap
                     sx={{ flexGrow: 0,marginLeft:2}}
                     onClick={()=>window.location.href="/"}
                 >
