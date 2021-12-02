@@ -18,6 +18,7 @@ import Collapse from '@mui/material/Collapse';
 import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
 import { useActions } from "../../hooks/useActions";
+import ReactGA from 'react-ga';
 
 function LoginPage() {
 
@@ -39,6 +40,12 @@ function LoginPage() {
     const handleLogin=()=>{
         let {username, password}=inputData;
         login(username,password)
+        ReactGA.event({
+            category: "login",
+            action: "login",
+            label: "login",
+            value:1
+          })
     };
 
     useEffect(() =>{
@@ -50,7 +57,7 @@ function LoginPage() {
 
     useEffect(()=>{
        if(auth){
-           window.location.href = '/';
+           window.location.href = '#/';
        }
     },[auth]);
 

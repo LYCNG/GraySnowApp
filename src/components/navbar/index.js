@@ -49,11 +49,6 @@ function TopBar({
     const handleClick = (event) => {
         event.preventDefault();
         setMenuEl(event.currentTarget);
-        ReactGA.event({
-            category: "menu",
-            action: "translate",
-            label: "translate",
-          })
     };
 
     //Mobile menu
@@ -70,6 +65,12 @@ function TopBar({
         var ok = confirm(t("appbar.logout_check"))
         if(ok) logout();
         setUserEl(null);
+        ReactGA.event({
+            category: "logout",
+            action: "logout",
+            label: "logout",
+            value: 1
+          });
     };
     const handleUserMenuOpen = (event) => {
         setUserEl(event.currentTarget);
@@ -85,9 +86,9 @@ function TopBar({
             i18n.changeLanguage(lng);
             translate(lng)
             ReactGA.event({
-                category: 'Links',
-                action: 'GitHub',
-                label: 'GitHub button clicked!',
+                category: "menu",
+                action: "translate",
+                label: "translate",
                 value: 1
               });
         }
