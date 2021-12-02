@@ -15,13 +15,14 @@ const reducer = (state = INIT_STATE,action)=>{
                 ...state,
                 auth: true,
                 username: action.username,
-                avatar:"https://upload.wikimedia.org/wikipedia/zh/e/e5/Gawr_Gura.png",
+                avatar:action.avatar,
                 templateToken:action.templateToken
             }
-        case ActionTypes.SET_USER_LOGOUT: //取消登入
+        case ActionTypes.SET_USER_LOGOUT: //登出
             return {
                 ...INIT_STATE,
                 auth:false,
+                avatar:""
             };
             
         case ActionTypes.SET_USER_LOGIN_ERROR_MESSAGE:
@@ -32,7 +33,7 @@ const reducer = (state = INIT_STATE,action)=>{
         case ActionTypes.CLEAN_LOGIN_ERROR_MESSAGE:
             return {
                 ...state,
-                error:""
+                error_message:""
             }
         default:
             return state;

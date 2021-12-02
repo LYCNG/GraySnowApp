@@ -21,7 +21,7 @@ import Avatar from '@mui/material/Avatar';
 import PropTypes from 'prop-types';
 
 //GA TRACK EVENT
-import ReactGA from 'react-ga';
+import {eventTracker} from '../../hooks/useEventTracker';
 // const {REACT_APP_GA_TRACKING_CODE} = process.env
 // ReactGA.initialize(REACT_APP_GA_TRACKING_CODE);
 // ReactGA.pageview(window.location.pathname + window.location.search);
@@ -33,8 +33,8 @@ function TopBar({
     const { t,i18n } = useTranslation();
     //redux store
     const {translate,switchMode,logout} =  useActions();
-    let theme = useSelector(state => state.theme);//String
-    let {auth,avatar,username} = useSelector(state => state.auth);//Boolean
+    const theme = useSelector(state => state.theme);//String
+    const {auth,avatar,username} = useSelector(state => state.auth);//Boolean
 
     //local state
     const [menuEl, setMenuEl] = useState(null);
@@ -44,7 +44,7 @@ function TopBar({
     const menuId = 'primary-search-account-menu';
     const [showSideMenu,setShowSideMenu] = useState(false);
     const darkTheme={"Dark":"#1D1B8C",}
-
+    
     //function
     const handleClick = (event) => {
         event.preventDefault();
@@ -65,13 +65,9 @@ function TopBar({
         var ok = confirm(t("appbar.logout_check"))
         if(ok) logout();
         setUserEl(null);
-        ReactGA.event({
-            category: "logout",
-            action: "logout",
-            label: "user logout",
-            value: 1
-          });
+        eventTracker("user action","user logout")
     };
+
     const handleUserMenuOpen = (event) => {
         setUserEl(event.currentTarget);
     };
@@ -85,12 +81,7 @@ function TopBar({
         if(lng!==i18n.language) {
             i18n.changeLanguage(lng);
             translate(lng)
-            ReactGA.event({
-                category: "menu",
-                action: "translate",
-                label: "translate",
-                value: 1
-              });
+            eventTracker("user action","translate");
         }
         setMenuEl(null)
     };
@@ -134,9 +125,14 @@ function TopBar({
           open={Boolean(userEl)}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleMenuClose}>{username}</MenuItem>
-          <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-          <MenuItem onClick={handleLogout }>{t("appbar.Logout")}</MenuItem>
+            <MenuItem onClick={handleMenuClose}>{username}</MenuItem>
+            <MenuItem onClick={()=>{
+              eventTracker("user action","to user account page")
+              window.location.href="#/account"}
+            }>
+                {t("account.account")}
+            </MenuItem>
+           <MenuItem onClick={handleLogout }>{t("appbar.Logout")}</MenuItem>
         </Menu>
       );
 

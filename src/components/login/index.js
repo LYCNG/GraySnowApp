@@ -18,7 +18,7 @@ import Collapse from '@mui/material/Collapse';
 import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
 import { useActions } from "../../hooks/useActions";
-import ReactGA from 'react-ga';
+import {eventTracker} from "../../hooks/useEventTracker"
 
 function LoginPage() {
 
@@ -37,15 +37,15 @@ function LoginPage() {
         setRegister(prev=>!prev);
     };
 
+    const handleKeyPress=(event)=>{
+        if(event.key==="Enter"){
+            handleLogin()
+        }
+    };
     const handleLogin=()=>{
-        let {username, password}=inputData;
+        let {username, password} = inputData;
         login(username,password);
-        ReactGA.event({
-            category: "login",
-            action: "login",
-            label: "user login",
-            value:1
-          });
+        eventTracker("user action","user login");
     };
 
     useEffect(() =>{
@@ -81,7 +81,7 @@ function LoginPage() {
 
     const loginButton = (
         <>
-            <Button variant="contained" onClick={handleLogin}>{t("login.login")}</Button>
+            <Button variant="contained" onClick={handleLogin} onKeyPress={handleKeyPress}>{t("login.login")}</Button>
             <Button variant="contained" color='warning' startIcon={<ArrowForwardIosIcon />} sx={{ marginLeft:"2em" }} onClick={handleRegister}>
                 {t("login.register")}
             </Button>
@@ -127,6 +127,7 @@ function LoginPage() {
                     <PasswordIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                     <TextField
                         id="input-with-sx" label={t("login.password")} 
+                        onKeyPress={handleKeyPress}
                         variant="standard" type="password" onChange={(e)=>setInputData({...inputData,password:e.target.value})}
                         />
                 </Box>

@@ -35,5 +35,9 @@
         "new":"ニュース",
         "feature":"フィーチャ",
         "project":"企画"
+    },
+    "account":{
+        "noAuth":"あなたはログインしていません",
+        "account":"アカウント"
     }
 }

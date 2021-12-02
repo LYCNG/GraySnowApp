@@ -35,5 +35,9 @@
         "new":"News",
         "feature":"Feature",
         "project":"Project"
+    },
+    "account":{
+        "noAuth":"You are not login",
+        "account":"My Account"
     }
 }
