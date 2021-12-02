@@ -79,9 +79,9 @@ function LoginPage() {
     );
 
     const loginButton = (
-        <>
+        <> 
             <Button variant="contained" onClick={handleLogin} onKeyPress={handleKeyPress}>{t("login.login")}</Button>
-            <Button variant="contained" color='warning' startIcon={<ArrowForwardIosIcon />} sx={{ marginLeft:"2em" }} onClick={handleRegister}>
+            <Button variant="contained" color='warning' startIcon={<ArrowForwardIosIcon />} sx={{ margin:"1em" }} onClick={handleRegister}>
                 {t("login.register")}
             </Button>
         </>
@@ -89,7 +89,7 @@ function LoginPage() {
     const registerButton = (
         <>
             <Button variant="contained" onClick={()=>alert("sign up")}>{t("register.sign_up")}</Button>
-            <Button variant="contained" color= 'warning' startIcon={<ArrowBackIosIcon />} sx={{ marginLeft:"2em" }} onClick={handleRegister}>
+            <Button variant="contained" color= 'warning' startIcon={<ArrowBackIosIcon />} sx={{ margin:"1em" }} onClick={handleRegister}>
                 {t("register.back")}
             </Button>
         </>
@@ -134,7 +134,7 @@ function LoginPage() {
             </FormControl>
             
             {!register?<FormControlLabel control={<Checkbox defaultChecked />} label={t("login.remember")} sx={{marginTop:"1.5em"}}/>:null}
-            <Box sx={{ marginTop:'2em'}}>
+            <Box sx={{ marginTop:'2em',justifyContent: 'center'}}>
                 {!register?loginButton:registerButton}
             </Box>
             
