@@ -20,7 +20,7 @@ function Home() {
                 <img src={Google} className="App-logo1" alt="logo" width="100" height="100" />
                 <img src={GA} className="App-logo1" alt="logo" width="150" height="150" />
             </div>
-            <h1 style={{color:theme==="Dark"?"white":"purple"}}>REACT TEST WITH GOOGLE ANALYTICS</h1>
+            <h1 style={{color:theme==="Dark"?"aqua":"purple"}}>REACT TEST WITH GOOGLE ANALYTICS</h1>
             </header>
         </div>
     );

@@ -16,7 +16,7 @@ const reducer = (state = INIT_STATE,action)=>{
                 auth: true,
                 username: action.username,
                 avatar:action.avatar,
-                templateToken:action.templateToken
+                token:action.token
             }
         case ActionTypes.SET_USER_LOGOUT: //登出
             return {
