@@ -19,11 +19,9 @@ function App() {
     <HashRouter>
     <div className="App" style={{backgroundColor:themeStyle[theme]}}>
       <TopBar /> 
-      {/* <Router basename={usePublic?REACT_APP_PUBLIC_URL:null} > */}
         <Box sx={{width:'100%',minHeight: '100vh'}}>
           <BaseRouter />
         </Box>
-      {/* </Router> */}
     </div>
     </HashRouter>
   );

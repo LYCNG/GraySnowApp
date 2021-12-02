@@ -49,7 +49,6 @@ function LoginPage() {
     };
 
     useEffect(() =>{
-        console.log("err:",error_message)
         if (error_message) {
             setPopError(Boolean(error_message));
             cleanError()
