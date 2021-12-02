@@ -100,7 +100,7 @@ function LoginPage() {
             backgroundColor: 'white',
             margin: 'auto',marginTop: 8,padding:"2em",
             display: 'flex', flexDirection: 'column',
-            alignItems: 'center',border: '2px solid blue',boxShadow:"5px 5px 8px 3px #000000"}}>
+            alignItems: 'center',border: '2px solid black',boxShadow:"5px 5px 8px 3px #000000"}}>
             <Typography variant="h3" component="div" gutterBottom sx={{fontWeight:"bold",color:"blue"}}>
                 {!register?t("login.title"):t("register.title")}
             </Typography>

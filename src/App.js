@@ -1,7 +1,7 @@
 
 import './App.css';
 import {TopBar} from "./components"
-import BaseRouter from './router'
+import BaseRouter from './router/router'
 import { BrowserRouter as Router,HashRouter} from 'react-router-dom'
 import Box from '@mui/material/Box';
 // import { useTranslation} from 'react-i18next';

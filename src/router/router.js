@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route,Switch } from "react-router-dom";
-import {Home,LoginPage,News} from "./components"
-import useTracker from './hooks/useTracker';
+import {Home,LoginPage,News} from "../components"
+import useTracker from '../hooks/useTracker';
 
 const BaseRouter = () => (
     <Switch>

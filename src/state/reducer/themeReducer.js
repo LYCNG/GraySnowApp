@@ -1,7 +1,5 @@
 import { ActionTypes } from "../action-types";
 
-
-
 const DARK_STATE={
     theme:"#282c34",
     sideBar:"#4B4B4B",
