@@ -43,7 +43,7 @@ function LoginPage() {
         ReactGA.event({
             category: "login",
             action: "login",
-            label: "login",
+            label: "user login",
             value:1
           })
     };

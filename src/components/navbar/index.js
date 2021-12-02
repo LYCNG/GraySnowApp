@@ -68,7 +68,7 @@ function TopBar({
         ReactGA.event({
             category: "logout",
             action: "logout",
-            label: "logout",
+            label: "user logout",
             value: 1
           });
     };
