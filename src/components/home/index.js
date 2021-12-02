@@ -25,7 +25,7 @@ function Home() {
             <button onClick={()=>withdrawMoney(account)}>全領</button>
             </header>
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

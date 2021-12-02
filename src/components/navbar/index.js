@@ -22,8 +22,8 @@ import PropTypes from 'prop-types';
 
 //GA TRACK EVENT
 import ReactGA from 'react-ga';
-const {REACT_APP_GA_TRACKING_CODE} = process.env
-ReactGA.initialize(REACT_APP_GA_TRACKING_CODE);
+// const {REACT_APP_GA_TRACKING_CODE} = process.env
+// ReactGA.initialize(REACT_APP_GA_TRACKING_CODE);
 // ReactGA.pageview(window.location.pathname + window.location.search);
 function TopBar({
     useLogin,
@@ -84,6 +84,12 @@ function TopBar({
         if(lng!==i18n.language) {
             i18n.changeLanguage(lng);
             translate(lng)
+            ReactGA.event({
+                category: 'Links',
+                action: 'GitHub',
+                label: 'GitHub button clicked!',
+                value: 1
+              });
         }
         setMenuEl(null)
     };
@@ -109,7 +115,7 @@ function TopBar({
             {/* <AccountCircle /> */}
             <Avatar alt="Remy Sharp" src={avatar} />
         </IconButton>
-    )
+    );
 
     const renderUserMenu = (
         <Menu
@@ -195,7 +201,7 @@ function TopBar({
             <MenuItem onClick={()=>changeLanguage("zh-CN")}>{t("appbar.china")}</MenuItem>
             <MenuItem onClick={()=>changeLanguage("jp")}>{t("appbar.japan")}</MenuItem>
       </Menu>
-    )
+    );
 
     return (
         <Box sx={{ flexGrow: 5 }}>
@@ -261,7 +267,7 @@ function TopBar({
         </AppBar>
       </Box>
     );
-}
+};
 
 
 TopBar.propTypes = {
