@@ -30,30 +30,30 @@ function LoginPage() {
     const [popError, setPopError] = useState(false);
 
     // const {authorize} = bindActionCreators(actionCreator,dispatch);
-    const { auth, error } = useSelector(state =>state.auth);
+    const { auth, error_message } = useSelector(state =>state.auth);
 
     const handleRegister=()=>{
         setPopError(false);
-        setRegister(prev=>!prev)
+        setRegister(prev=>!prev);
     };
 
     const handleLogin=()=>{
         let {username, password}=inputData;
-        login(username,password)
+        login(username,password);
         ReactGA.event({
             category: "login",
             action: "login",
             label: "user login",
             value:1
-          })
+          });
     };
 
     useEffect(() =>{
-        if (error) {
-            setPopError(Boolean(error));
+        if (error_message) {
+            setPopError(Boolean(error_message));
             cleanError()
         }
-    },[error,cleanError])
+    },[error_message,cleanError]);
 
     useEffect(()=>{
        if(auth){
@@ -76,7 +76,7 @@ function LoginPage() {
                 <TextField id="input-with-sx" label={t("register.email")} variant="standard" type="password"/>
             </Box>
         </>
-    )
+    );
 
     const loginButton = (
         <>
@@ -85,7 +85,7 @@ function LoginPage() {
                 {t("login.register")}
             </Button>
         </>
-    ) 
+    );
     const registerButton = (
         <>
             <Button variant="contained" onClick={()=>alert("sign up")}>{t("register.sign_up")}</Button>
@@ -93,13 +93,13 @@ function LoginPage() {
                 {t("register.back")}
             </Button>
         </>
-    )
+    );
 
     const popAlert=(
         <Alert severity="error">
            <strong>{t("login.incorrect")}</strong>
         </Alert>
-    )
+    );
 
     return (
         <Box sx={{ 
@@ -139,6 +139,6 @@ function LoginPage() {
             
         </Box>
     )
-}
+};
 
-export default LoginPage
+export default LoginPage;
