@@ -11,7 +11,7 @@ const AccountPage = loadable(()=>import("../components/user"))
 
 
 const BaseRouter = () => (
-    <Suspense callbacks={<div>Loading...</div>}>
+    <Suspense fallbacks={<div>Loading...</div>}>
         <Switch>
             <Route exact path ={'/'} component={useTracker(Home) } />
             <Route exact path={"/login"} component={useTracker(LoginPage) } />
