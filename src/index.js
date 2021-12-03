@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Suspense}  from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -14,7 +14,9 @@ ReactDOM.render(
     <Provider store={store}>                          
       <PersistGate loading={null} persistor={persistor}>
       {/* <HashRouter > */}
-        <App />
+        <Suspense fallbacks={<div>Loading...</div>}>
+          <App />
+        </Suspense>
         {/* </HashRouter> */}
       </PersistGate>
     </Provider>

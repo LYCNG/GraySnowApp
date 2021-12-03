@@ -1,4 +1,4 @@
-import React,{Suspense} from 'react'
+import React from 'react'
 import { Route,Switch } from "react-router-dom";
 // import {Home,LoginPage,News,AccountPage} from "../components"
 import loadable from '@loadable/component'
@@ -11,14 +11,12 @@ const AccountPage = loadable(()=>import("../components/user"))
 
 
 const BaseRouter = () => (
-    <Suspense fallbacks={<div>Loading...</div>}>
         <Switch>
             <Route exact path ={'/'} component={useTracker(Home) } />
             <Route exact path={"/login"} component={useTracker(LoginPage) } />
             <Route exact path={"/account"} component={useTracker(AccountPage) } />
             <Route exact path={"/news"} component={useTracker(News) } />
         </Switch>
-    </Suspense>
 );
 
 export default BaseRouter;
