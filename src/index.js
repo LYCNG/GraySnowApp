@@ -11,8 +11,7 @@ import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
- 
+    <Provider store={store}>                          
       <PersistGate loading={null} persistor={persistor}>
       {/* <HashRouter > */}
         <App />
