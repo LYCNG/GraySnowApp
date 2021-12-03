@@ -77,21 +77,21 @@ function TopBar({
     const handleSideMenu=()=>{
         setShowSideMenu(true)
     };
+    
     const changeLanguage = (lng) => {
         if(lng!==i18n.language) {
             i18n.changeLanguage(lng);
             translate(lng)
             eventTracker("user action","translate");
         }
-        setMenuEl(null)
+        setMenuEl(null);
     };
-
     //--theme control
     const handleSwitch=(e)=>{
-        e.preventDefault()
-        let bool =  e.target.checked
-        setChecked(bool)
-        switchMode(bool?"Dark":"Light")
+        e.preventDefault();
+        let bool = e.target.checked;
+        setChecked(bool);
+        switchMode(bool?"Dark":"Light");
     };
 
     const userAuth=(
@@ -138,27 +138,27 @@ function TopBar({
 
     const renderMobileMenu = (
         <Menu
-      anchorEl={mobileAnchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
+            anchorEl={mobileAnchorEl}
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
 
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={Boolean(mobileAnchorEl)}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <FormControlLabel 
-            control={<Switch  checked={checked} color="default" onChange={handleSwitch}/>} 
-            label={t(`appbar.${theme}`)} 
-        />
-      </MenuItem>
-      {useTranslate?(
+            keepMounted
+            transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            open={Boolean(mobileAnchorEl)}
+            onClose={handleMobileMenuClose}
+        >
+        <MenuItem>
+            <FormControlLabel 
+                control={<Switch  checked={checked} color="default" onChange={handleSwitch}/>} 
+                label={t(`appbar.${theme}`)} 
+            />
+        </MenuItem>
+         {useTranslate?(
           <MenuItem>
             <Button color="inherit" onClick={handleClick} disableElevation >
                 {t("appbar.current")}
