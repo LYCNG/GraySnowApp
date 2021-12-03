@@ -9,7 +9,8 @@ import logger from "redux-logger";
 const persistConfig = {
     key: 'root',//can change
     storage: storage,
-    stateReconciler: autoMergeLevel2 // 檢視 'Merge Process' 部分的具體情況
+    stateReconciler: autoMergeLevel2, // 檢視 'Merge Process' 部分的具體情況
+    timeout:null
 };
 
 const myPersistReducer = persistReducer(persistConfig, reducers);
