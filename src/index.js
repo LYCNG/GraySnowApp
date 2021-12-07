@@ -13,11 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>                          
       <PersistGate loading={<Fragment />} persistor={persistor}>
-      {/* <HashRouter > */}
-
           <App />
-
-        {/* </HashRouter> */}
       </PersistGate>
     </Provider>
   </React.StrictMode>,
