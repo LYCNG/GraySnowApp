@@ -16,14 +16,14 @@ function App() {
   }
 
   return (
-    <HashRouter>
     <div className="App" style={{backgroundColor:themeStyle[theme]}}>
-      <TopBar /> 
-        <Box sx={{width:'100%',minHeight: '100vh'}}>
-          <BaseRouter />
-        </Box>
+      <HashRouter>
+        <TopBar /> 
+          <Box sx={{width:'100%',minHeight: '100vh'}}>
+            <BaseRouter />
+          </Box>
+      </HashRouter>
     </div>
-    </HashRouter>
   );
 }
 
