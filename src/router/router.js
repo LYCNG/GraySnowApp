@@ -8,10 +8,10 @@ import useTracker from '../hooks/useTracker';
 // const LoginPage = loadable(()=>import("../components/login"))
 // const News = loadable(()=>import("../components/news"))
 // const AccountPage = loadable(()=>import("../components/user"))
-const Home = lazy(()=>import("../components/home"))
-const LoginPage = lazy(()=>import("../components/login"))
-const News = lazy(()=>import("../components/news"))
-const AccountPage = lazy(()=>import("../components/user"))
+const Home = lazy(()=>import("../page/home-page"))
+const LoginPage = lazy(()=>import("../page/login-page"))
+const News = lazy(()=>import("../page/news-page"))
+const AccountPage = lazy(()=>import("../page/user-page"))
 
 
 const BaseRouter = () => (

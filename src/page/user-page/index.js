@@ -5,10 +5,9 @@ import {useSelector} from "react-redux"
 import { useActions } from "../../hooks/useActions";
 
 function AccountPage() {
-    const { t,i18n } = useTranslation();
+    const { t } = useTranslation();
     let theme = useSelector(state => state.theme);//String
     let {auth,avatar,username} = useSelector(state => state.auth);//Boolean
-
 
     useEffect(()=>{
         if(!auth){

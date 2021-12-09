@@ -1,6 +1,6 @@
 
 import './App.css';
-import {TopBar} from "./components"
+import TopBar from "./components/navbar"
 import BaseRouter from './router/router'
 import { BrowserRouter as Router,HashRouter} from 'react-router-dom'
 import Box from '@mui/material/Box';
