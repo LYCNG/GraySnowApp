@@ -18,9 +18,9 @@ const BaseRouter = () => (
         <Switch>
             <Suspense fallback={<Fragment>Loading...</Fragment>}>
                 <Route exact path ={'/'} component={useTracker(Home) } />
-                {/* <Route exact path={"/login"} component={useTracker(LoginPage) } />
+                <Route exact path={"/login"} component={useTracker(LoginPage) } />
                 <Route exact path={"/account"} component={useTracker(AccountPage) } />
-                <Route exact path={"/news"} component={useTracker(News) } /> */}
+                <Route exact path={"/news"} component={useTracker(News) } />
             </Suspense>
         </Switch>
 );
