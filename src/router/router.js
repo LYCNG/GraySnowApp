@@ -8,10 +8,10 @@ import { HashRouter} from 'react-router-dom'
 const BaseRouter = () => (
     <HashRouter>
         <Routes>
-            <Route exact path ={'/'} element={useTracker(Home)} />
-            <Route exact path={"/login"} element={useTracker(LoginPage) } />
-            <Route exact path={"/account"} element={useTracker(AccountPage) } />
-            <Route exact path={"/news"} element={useTracker(News) } />
+            <Route exact path ={'/'} element={<Home />} />
+            <Route exact path={"/login"} element={<LoginPage />} />
+            <Route exact path={"/account"} element={<AccountPage />} />
+            <Route exact path={"/news"} element={<News />} />
         </Routes>
     </HashRouter>
 );
