@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,Fragment } from "react";
 
 import ReactGA from "react-ga";
 
@@ -14,16 +14,12 @@ const useTracker=(WrappedComponent, options = {}) => {
     });
     ReactGA.pageview(page);
   };
-
-  const HOC = props => {
-    useEffect(() => trackPage(props.location.pathname), [
-      props.location.pathname
-    ]);
-
-    return <WrappedComponent {...props} />;
-  };
-
-  return HOC;
+  useEffect(()=>{
+    trackPage(window.location.pathname)
+  },[window.location.pathname])
+  return (
+    <WrappedComponent />
+  )
 };
 
 export default useTracker;
