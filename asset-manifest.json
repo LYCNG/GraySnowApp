@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/GraySnowApp/static/css/main.b42b684c.chunk.css",
-    "main.js": "/GraySnowApp/static/js/main.864c54c9.chunk.js",
-    "main.js.map": "/GraySnowApp/static/js/main.864c54c9.chunk.js.map",
+    "main.js": "/GraySnowApp/static/js/main.d79ed476.chunk.js",
+    "main.js.map": "/GraySnowApp/static/js/main.d79ed476.chunk.js.map",
     "runtime-main.js": "/GraySnowApp/static/js/runtime-main.58b996dd.js",
     "runtime-main.js.map": "/GraySnowApp/static/js/runtime-main.58b996dd.js.map",
     "static/js/2.44b94465.chunk.js": "/GraySnowApp/static/js/2.44b94465.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.58b996dd.js",
     "static/js/2.44b94465.chunk.js",
     "static/css/main.b42b684c.chunk.css",
-    "static/js/main.864c54c9.chunk.js"
+    "static/js/main.d79ed476.chunk.js"
   ]
 }
