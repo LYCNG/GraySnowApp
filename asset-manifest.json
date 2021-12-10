@@ -1,28 +1,17 @@
 {
   "files": {
     "main.css": "/GraySnowApp/static/css/main.b42b684c.chunk.css",
-    "main.js": "/GraySnowApp/static/js/main.3b5365bd.chunk.js",
-    "main.js.map": "/GraySnowApp/static/js/main.3b5365bd.chunk.js.map",
-    "runtime-main.js": "/GraySnowApp/static/js/runtime-main.8f0e8f00.js",
-    "runtime-main.js.map": "/GraySnowApp/static/js/runtime-main.8f0e8f00.js.map",
-    "static/js/2.acf889f0.chunk.js": "/GraySnowApp/static/js/2.acf889f0.chunk.js",
-    "static/js/2.acf889f0.chunk.js.map": "/GraySnowApp/static/js/2.acf889f0.chunk.js.map",
-    "static/js/3.350973f2.chunk.js": "/GraySnowApp/static/js/3.350973f2.chunk.js",
-    "static/js/3.350973f2.chunk.js.map": "/GraySnowApp/static/js/3.350973f2.chunk.js.map",
-    "static/js/4.030fb2b3.chunk.js": "/GraySnowApp/static/js/4.030fb2b3.chunk.js",
-    "static/js/4.030fb2b3.chunk.js.map": "/GraySnowApp/static/js/4.030fb2b3.chunk.js.map",
-    "static/js/5.e9e6fe67.chunk.js": "/GraySnowApp/static/js/5.e9e6fe67.chunk.js",
-    "static/js/5.e9e6fe67.chunk.js.map": "/GraySnowApp/static/js/5.e9e6fe67.chunk.js.map",
-    "static/js/6.b5d2f25c.chunk.js": "/GraySnowApp/static/js/6.b5d2f25c.chunk.js",
-    "static/js/6.b5d2f25c.chunk.js.map": "/GraySnowApp/static/js/6.b5d2f25c.chunk.js.map",
-    "static/js/7.f2deeff9.chunk.js": "/GraySnowApp/static/js/7.f2deeff9.chunk.js",
-    "static/js/7.f2deeff9.chunk.js.map": "/GraySnowApp/static/js/7.f2deeff9.chunk.js.map",
-    "static/js/8.b996f974.chunk.js": "/GraySnowApp/static/js/8.b996f974.chunk.js",
-    "static/js/8.b996f974.chunk.js.map": "/GraySnowApp/static/js/8.b996f974.chunk.js.map",
+    "main.js": "/GraySnowApp/static/js/main.864c54c9.chunk.js",
+    "main.js.map": "/GraySnowApp/static/js/main.864c54c9.chunk.js.map",
+    "runtime-main.js": "/GraySnowApp/static/js/runtime-main.58b996dd.js",
+    "runtime-main.js.map": "/GraySnowApp/static/js/runtime-main.58b996dd.js.map",
+    "static/js/2.44b94465.chunk.js": "/GraySnowApp/static/js/2.44b94465.chunk.js",
+    "static/js/2.44b94465.chunk.js.map": "/GraySnowApp/static/js/2.44b94465.chunk.js.map",
+    "static/js/3.074b0616.chunk.js": "/GraySnowApp/static/js/3.074b0616.chunk.js",
+    "static/js/3.074b0616.chunk.js.map": "/GraySnowApp/static/js/3.074b0616.chunk.js.map",
     "index.html": "/GraySnowApp/index.html",
     "static/css/main.b42b684c.chunk.css.map": "/GraySnowApp/static/css/main.b42b684c.chunk.css.map",
-    "static/js/2.acf889f0.chunk.js.LICENSE.txt": "/GraySnowApp/static/js/2.acf889f0.chunk.js.LICENSE.txt",
-    "static/js/3.350973f2.chunk.js.LICENSE.txt": "/GraySnowApp/static/js/3.350973f2.chunk.js.LICENSE.txt",
+    "static/js/2.44b94465.chunk.js.LICENSE.txt": "/GraySnowApp/static/js/2.44b94465.chunk.js.LICENSE.txt",
     "static/media/Google.svg.221f782d.png": "/GraySnowApp/static/media/Google.svg.221f782d.png",
     "static/media/ga.5e34e750.png": "/GraySnowApp/static/media/ga.5e34e750.png",
     "static/media/getFetch.cjs": "/GraySnowApp/static/media/getFetch.582d29c4.cjs",
@@ -30,9 +19,9 @@
     "static/media/nako.4ef9cc15.png": "/GraySnowApp/static/media/nako.4ef9cc15.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.8f0e8f00.js",
-    "static/js/3.350973f2.chunk.js",
+    "static/js/runtime-main.58b996dd.js",
+    "static/js/2.44b94465.chunk.js",
     "static/css/main.b42b684c.chunk.css",
-    "static/js/main.3b5365bd.chunk.js"
+    "static/js/main.864c54c9.chunk.js"
   ]
 }
