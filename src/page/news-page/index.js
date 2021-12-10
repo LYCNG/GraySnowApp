@@ -1,6 +1,4 @@
 import React from 'react'
-import cheerio from 'cheerio';
-import request from "request";
 import axios from "axios";
 function News() {
     let holo = "https://en.hololive.tv/r/v1/sites/13421518/ecommerce";
