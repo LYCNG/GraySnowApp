@@ -3,11 +3,19 @@ import Box from '@mui/material/Box';
 import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
 import { useActions } from "../../hooks/useActions";
+import TrackPage from '../../hooks/useTracker';
+import {useLocation} from 'react-router-dom';
 
 function AccountPage() {
     const { t } = useTranslation();
     let theme = useSelector(state => state.theme);//String
     let {auth,avatar,username} = useSelector(state => state.auth);//Boolean
+
+    let location = useLocation();
+
+    useEffect(()=>{
+        TrackPage(location.pathname)
+    },[location])
 
     useEffect(()=>{
         if(!auth){
@@ -15,7 +23,6 @@ function AccountPage() {
             alert(t("account.noAuth"))
         }
     },[auth]);
-
     return (
         <Box>
             <h1 style={{color:theme==="Dark"?"white":"black"}}>{username}</h1>

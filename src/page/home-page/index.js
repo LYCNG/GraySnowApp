@@ -1,16 +1,20 @@
 import React from 'react'
 import {useEffect} from "react"
 import {useSelector} from "react-redux"
-
-import {useState} from "react";
-import { useActions } from "../../hooks/useActions";
+import TrackPage from '../../hooks/useTracker'
 import logo from '../../logo.svg';
 import Google from '../../assets/img/Google.svg.png';
 import GA from '../../assets/img/ga.png';
+import {useLocation} from 'react-router-dom'
+
 
 function Home() {
-
-    const theme = useSelector((state)=>state.theme)
+    let location = useLocation();
+    const theme = useSelector((state)=>state.theme);
+    
+    useEffect(()=>{
+        TrackPage(location.pathname)
+    },[location])
 
     return (
         <div>

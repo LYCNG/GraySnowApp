@@ -19,9 +19,11 @@ import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
 import { useActions } from "../../hooks/useActions";
 import {eventTracker} from "../../hooks/useEventTracker"
+import {useLocation} from 'react-router-dom'
+import TrackPage from '../../hooks/useTracker';
 
 function LoginPage() {
-
+ 
     const {t} = useTranslation();
     const {  login, cleanError } = useActions();
 
@@ -47,6 +49,12 @@ function LoginPage() {
         login(username,password);
         eventTracker("user action","user login");
     };
+
+    let location = useLocation();
+    useEffect(()=>{
+        TrackPage(location.pathname)
+    },[location])
+
 
     useEffect(() =>{
         if (error_message) {

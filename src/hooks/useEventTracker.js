@@ -1,5 +1,4 @@
 import ReactGA from 'react-ga';
-import { useMemo } from "react";
 
 export const eventTracker = (category, action)=>{
     return ReactGA.event({

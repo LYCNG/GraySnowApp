@@ -6,7 +6,6 @@ import Box from '@mui/material/Box';
 // import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
 
-
 function App() {
   const theme = useSelector((state)=>state.theme);
   const themeStyle = {
