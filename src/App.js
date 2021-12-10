@@ -1,8 +1,8 @@
 
 import './App.css';
 import TopBar from "./components/navbar"
-import BaseRouter from './router/router'
-import { BrowserRouter as Router,HashRouter} from 'react-router-dom'
+// import BaseRouter from './router/router'
+// import { BrowserRouter as Router,HashRouter} from 'react-router-dom'
 import Box from '@mui/material/Box';
 // import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
