@@ -6,9 +6,9 @@ import { BrowserRouter as Router,HashRouter} from 'react-router-dom'
 import Box from '@mui/material/Box';
 // import { useTranslation} from 'react-i18next';
 import {useSelector} from "react-redux"
+import  Home from "./page/home-page"
 
 function App() {
- 
   const theme = useSelector((state)=>state.theme);
   const themeStyle = {
     Dark: '#282c34',
@@ -17,12 +17,13 @@ function App() {
 
   return (
     <div className="App" style={{backgroundColor:themeStyle[theme]}}>
-      <HashRouter>
+      {/* <HashRouter> */}
         <TopBar /> 
           <Box sx={{width:'100%',minHeight: '100vh'}}>
-            <BaseRouter />
+            {/* <BaseRouter /> */}
+            <Home/>
           </Box>
-      </HashRouter>
+      {/* </HashRouter> */}
     </div>
   );
 }
