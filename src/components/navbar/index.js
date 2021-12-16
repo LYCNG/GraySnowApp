@@ -16,10 +16,11 @@ import { useActions } from "../../hooks/useActions";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
-
+import Zoom from '@mui/material/Zoom';
 import Avatar from '@mui/material/Avatar';
 import PropTypes from 'prop-types';
-
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import Brightness6Icon from '@mui/icons-material/Brightness6';
 //GA TRACK EVENT
 import {eventTracker} from '../../hooks/useEventTracker';
 // const {REACT_APP_GA_TRACKING_CODE} = process.env
@@ -41,10 +42,10 @@ function TopBar({
     const [userEl,setUserEl] = useState(null);
     const [mobileAnchorEl, setMobileAnchorEl] = useState(null);
     const [checked, setChecked] = useState(theme==="Dark");
-    const menuId = 'primary-search-account-menu';
     const [showSideMenu,setShowSideMenu] = useState(false);
+    const [showDark,setShowDark] = useState(false);
     const darkTheme={"Dark":"#1D1B8C",}
-    
+    const menuId = 'primary-search-account-menu';
     //function
     const handleClick = (event) => {
         event.preventDefault();
@@ -88,10 +89,13 @@ function TopBar({
     };
     //--theme control
     const handleSwitch=(e)=>{
-        e.preventDefault();
-        let bool = e.target.checked;
-        setChecked(bool);
+        const bool = e.target.checked;
+        setChecked(prev=>!prev)
         switchMode(bool?"Dark":"Light");
+        const delayShow = setTimeout(() =>{
+            setShowDark(bool);
+        },500)
+        return ()=>clearTimeout(delayShow);
     };
 
     const userAuth=(
@@ -136,6 +140,22 @@ function TopBar({
         </Menu>
       );
 
+    const themeSwitch =()=>{
+        const timeTranslate = { enter: 50,exit: 500};
+        return(
+            <>
+                {showDark ? (
+                    <Zoom in={checked} timeout={timeTranslate} >
+                        {<NightsStayIcon color="action" fontSize="large"/>}
+                    </Zoom>
+                ):(
+                    <Zoom in={!checked} timeout={timeTranslate} >
+                        {<Brightness6Icon color="warning" fontSize="large"/>}
+                    </Zoom>
+                )}
+            </>
+        );
+    };
     const renderMobileMenu = (
         <Menu
             anchorEl={mobileAnchorEl}
@@ -155,7 +175,7 @@ function TopBar({
         <MenuItem>
             <FormControlLabel 
                 control={<Switch  checked={checked} color="default" onChange={handleSwitch}/>} 
-                label={t(`appbar.${theme}`)} 
+                label={themeSwitch()} 
             />
         </MenuItem>
          {useTranslate?(
@@ -200,6 +220,7 @@ function TopBar({
       </Menu>
     );
 
+
     return (
         <Box sx={{ flexGrow: 5 }}>
             <AppBar position="static" sx={{backgroundColor:darkTheme[theme]}}>
@@ -228,9 +249,12 @@ function TopBar({
                 <Box sx={{ flexGrow: 0,display:{xs:"none",sm:"block"}}} >
                     <FormControlLabel 
                         control={<Switch  checked={checked} color="default" onChange={handleSwitch}/>} 
-                        label={t(`appbar.${theme}`)} 
+                        label={themeSwitch()}
                     />
-
+                  
+                    {/* {themeSwitch()} */}
+              
+  
                     {useTranslate?(
                         <Button color="inherit" onClick={handleClick} disableElevation >
                             {t("appbar.current")}
